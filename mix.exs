@@ -27,6 +27,9 @@ defmodule UeberauthDwolla.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ueberauth, "~> 0.2"},
+    {:httpoison, "~> 0.7"},
+    {:ex_doc, "~> 0.1", only: :dev},
+    {:earmark, ">= 0.0.0", only: :dev}]
   end
 end
