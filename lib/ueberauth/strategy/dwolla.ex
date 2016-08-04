@@ -6,9 +6,6 @@ defmodule Ueberauth.Strategy.Dwolla do
   use Ueberauth.Strategy, uid_field: :sub,
                           default_scope: "Send|Transactions|Funding|ManageCustomers"
 
-  import Calendar.DateTime, only: [add!: 2, now_utc: 0]
-  import Calendar.DateTime.Format, only: [unix: 1]
-
   alias Ueberauth.Auth.Info
   alias Ueberauth.Auth.Credentials
   alias Ueberauth.Auth.Extra
@@ -21,7 +18,7 @@ defmodule Ueberauth.Strategy.Dwolla do
   """
   def handle_request!(conn) do
     scopes = conn.params["scope"] || option(conn, :default_scope)
-    opts = [ scope: scopes ]
+    opts = [scope: scopes]
     if conn.params["state"], do: opts = Keyword.put(opts, :state, conn.params["state"])
     opts = Keyword.put(opts, :redirect_uri, callback_url(conn))
 
@@ -118,7 +115,7 @@ defmodule Ueberauth.Strategy.Dwolla do
       |> HTTPoison.get([{"Accept", "application/vnd.dwolla.v1.hal+json"}, {"Authorization", "Bearer #{token.access_token}"}])
 
     case response do
-      {:ok, %HTTPoison.Response{status_code: 401, body: body}} ->
+      {:ok, %HTTPoison.Response{status_code: 401, body: _body}} ->
         set_errors!(conn, [error("token", "unauthorized")])
       {:ok, %HTTPoison.Response{status_code: status_code, body: user} } when status_code in 200..399 ->
         put_private(conn, :dwolla_user, Poison.decode!(user))
