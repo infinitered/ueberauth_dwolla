@@ -1,5 +1,7 @@
 # UeberauthDwolla
 
+[![license img](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **TODO: Add description**
 
 ## Installation
@@ -21,4 +23,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:ueberauth_dwolla]]
     end
     ```
-
