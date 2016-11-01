@@ -18,9 +18,10 @@ defmodule Ueberauth.Strategy.Dwolla do
   """
   def handle_request!(conn) do
     scopes = conn.params["scope"] || option(conn, :default_scope)
-    opts = [scope: scopes]
-    if conn.params["state"], do: opts = Keyword.put(opts, :state, conn.params["state"])
-    opts = Keyword.put(opts, :redirect_uri, callback_url(conn))
+    opts =
+      [scope: scopes]
+      |> add_state_to_opts(conn)
+      |> Keyword.put(:redirect_uri, callback_url(conn))
 
     redirect!(conn, OAuth.authorize_url!(opts))
   end
@@ -122,6 +123,10 @@ defmodule Ueberauth.Strategy.Dwolla do
       {:error, reason} ->
         set_errors!(conn, [error("OAuth2", reason)])
     end
+  end
+
+  defp add_state_to_opts(opts, conn) do
+    if conn.params["state"], do: Keyword.put(opts, :state, conn.params["state"])
   end
 
   defp option(conn, key) do
