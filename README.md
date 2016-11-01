@@ -87,4 +87,4 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
   ## Project License
 
-  Please see [LICENSE](https://github.com/infinitered/ueberauth_dwolla/blob/master/LICENSE.md) for licensing details.
+  Please see [LICENSE](https://github.com/infinitered/ueberauth_dwolla/blob/master/LICENSE) for licensing details.
