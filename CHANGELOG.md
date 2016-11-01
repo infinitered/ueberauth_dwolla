@@ -4,11 +4,13 @@
 
 **Closed issues:**
 
+- Create changelog and create first release to hex [\#4](https://github.com/infinitered/ueberauth_dwolla/issues/4)
 - Clean up the code and fix compile warnings [\#3](https://github.com/infinitered/ueberauth_dwolla/issues/3)
 - Add MIT License  [\#2](https://github.com/infinitered/ueberauth_dwolla/issues/2)
 
 **Merged pull requests:**
 
+- Add changelog for 0.2.0 [\#10](https://github.com/infinitered/ueberauth_dwolla/pull/10) ([zberkom](https://github.com/zberkom))
 - Add correct file format to licencse [\#9](https://github.com/infinitered/ueberauth_dwolla/pull/9) ([zberkom](https://github.com/zberkom))
 - Fix compile warnings and refactor dwolla strategy [\#8](https://github.com/infinitered/ueberauth_dwolla/pull/8) ([zberkom](https://github.com/zberkom))
 - add MIT license badge [\#6](https://github.com/infinitered/ueberauth_dwolla/pull/6) ([Akim95](https://github.com/Akim95))
