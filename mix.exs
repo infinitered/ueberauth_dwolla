@@ -14,7 +14,7 @@ defmodule UeberauthDwolla.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :ueberauth, :oauth2]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,7 +27,8 @@ defmodule UeberauthDwolla.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:ueberauth, "~> 0.2"},
+    [{:ueberauth, "~> 0.4"},
+    {:oauth2, "0.6.0"},
     {:httpoison, "~> 0.7"},
     {:ex_doc, "~> 0.1", only: :dev},
     {:earmark, ">= 0.0.0", only: :dev}]
