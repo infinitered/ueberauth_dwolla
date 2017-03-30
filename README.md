@@ -85,6 +85,11 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     ]
   ```
 
+  ## Premium Support
+
+  [UeberauthDwolla](https://github.com/infinitered/ueberauth_dwolla), as an open source project, is free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ueberauth and UeberauthDwolla support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
+
+
   ## Project License
 
   Please see [LICENSE](https://github.com/infinitered/ueberauth_dwolla/blob/master/LICENSE) for licensing details.
